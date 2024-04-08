@@ -10,14 +10,11 @@ function Home() {
           MY NAME IS <span>Temirlan</span>
         </div>
         <div className="des">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-          officiis beatae repellendus rem ullam, ipsam nemo dolorem dolorum illo
-          laborum. Ea sed dolor ab qui, doloremque accusantium esse blanditiis
-          possimus!
+          I'm front-end developer. As a dedicated front-end developer with over two years of experience, I specialize in turning complex designs into functional and aesthetically pleasing web applications.
         </div>
 
         <a
-          href="#"
+          href="https://github.com/Baisalov24"
           target="_blank"
           rel="noopener noreferrer"
           className="animation active "

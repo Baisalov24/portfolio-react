@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ activeTab }) => {
-  const [linkNav] = useState(["Home", "Skills", "Projects", "Contacts"]);
+  const [linkNav] = useState(["Home", "Experience", "Skills", "Projects", "Contacts"]);
   const [statusNav, changeStatusNav] = useState(null);
   const toggleNav = () => {
     changeStatusNav(statusNav === null ? "active" : null);
