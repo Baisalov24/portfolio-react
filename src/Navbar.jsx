@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({activeTab}) => {
-    const [linkNav] = useState(['lorem', 'lorem', 'lorem', 'lorem']);
+    const [linkNav] = useState(['Home', 'Skills', 'Projects', 'Contacts']);
     const [statusNav, changeStatusNav] = useState(null);
     const toggleNav = () => {
         changeStatusNav(statusNav === null ? 'active' : null);
@@ -13,7 +13,7 @@ const NavBar = ({activeTab}) => {
     return (
         <header>
             <div className="logo">
-                <img src="/logo.png" alt="logo"/> Portfolio
+                <img src="/logo.png" alt="logo"/>My Portfolio
             </div>
             <nav className={statusNav}>
                 {
