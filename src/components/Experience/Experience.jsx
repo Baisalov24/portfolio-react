@@ -1,6 +1,7 @@
 import React from "react";
-
-import experienceData from "./experienceData"
+import "./style.css";
+import experienceData from "./experienceData";
+import { ReactComponent as WorkIcon } from "../../assets/work.svg";
 
 import {
   VerticalTimeline,
@@ -11,25 +12,23 @@ import "react-vertical-timeline-component/style.min.css";
 
 function Experience() {
   let workIconStyles = { background: "#eee5" };
-  let schoolIconStyles = { background: "#f9c74f" };
 
   return (
     <div>
       <h1 className="title">My Experience</h1>
       <VerticalTimeline>
         {experienceData.map((element) => {
-          let isWorkIcon = element.icon === "work";
-          let showButton =
-            element.buttonText !== undefined &&
-            element.buttonText !== null &&
-            element.buttonText !== "";
-
           return (
             <VerticalTimelineElement
+              contentStyle={{
+                background: "rgba(0, 0, 0, 0.30)",
+                color: "#fff",
+              }}
               key={element.key}
               date={element.date}
               dateClassName="date"
-              iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
+              iconStyle={{ background: "#fff", color: "#fff" }}
+              icon={<WorkIcon />}
             >
               <h3 className="vertical-timeline-element-title">
                 {element.title}
@@ -38,16 +37,7 @@ function Experience() {
                 {element.location}
               </h5>
               <p id="description">{element.description}</p>
-              {showButton && (
-                <a
-                  className={`button ${
-                    isWorkIcon ? "workButton" : "schoolButton"
-                  }`}
-                  href="/"
-                >
-                  {element.buttonText}
-                </a>
-              )}
+              <p>{element.company} </p>
             </VerticalTimelineElement>
           );
         })}

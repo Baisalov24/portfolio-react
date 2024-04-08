@@ -1,0 +1,18 @@
+.title {
+  font-size: 5em;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+h3 {
+  padding-top: 0.25em;
+}
+
+@media only screen and (max-width: 1700px) {
+  .vertical-timeline-element-date {
+    display: block !important;
+    float: none !important;
+    color: white;
+    margin-top: 1.5em;
+  }
+}
