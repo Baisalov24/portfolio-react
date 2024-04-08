@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,10 +12,7 @@ const NavBar = ({ activeTab }) => {
 
   return (
     <header>
-      <div className="logo">
-        <img src="/logo.png" alt="logo" />
-        My Portfolio
-      </div>
+      <div className="logo">My Portfolio</div>
       <nav className={statusNav}>
         {linkNav.map((value) => (
           <span key={value} className={activeTab === value ? "active" : ""}>

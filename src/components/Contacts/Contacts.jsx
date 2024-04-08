@@ -1,4 +1,5 @@
 import React, { useState} from 'react' 
+import './style.css'
 
 function Contacts() {
 const [listContacts] = useState([

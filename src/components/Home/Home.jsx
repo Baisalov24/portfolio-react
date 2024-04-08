@@ -1,10 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
+import "./style.css";
 
 function Home() {
-  const scrollTab = useRef();
-
   return (
-    <section ref={scrollTab} className="home">
+    <section className="home">
       <div className="content">
         <div className="name">
           MY NAME IS <span>Temirlan</span>

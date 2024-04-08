@@ -1,19 +1,18 @@
 import React from "react";
-import './App.css'
-import Navbar from "./Navbar";
-import Home from "./Home";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contacts from "./Contacts";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/Projects/Projects";
+import Contacts from "./components/Contacts/Contacts";
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Home/>
-    <Skills/>
-    <Projects />
-    <Contacts />
+      <Navbar />
+      <Home />
+      <Skills />
+      <Projects />
+      <Contacts />
     </div>
   );
 }
