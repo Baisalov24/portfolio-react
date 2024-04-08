@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import avatar from "../../assets/avatar.png"
 
 function Home() {
   return (
@@ -26,7 +27,7 @@ function Home() {
       </div>
       <div className="avatar">
         <div className="card">
-          <img src="/avatar.jpg" alt="avatar" />
+          <img src={avatar} alt="avatar" />
         </div>
       </div>
     </section>
