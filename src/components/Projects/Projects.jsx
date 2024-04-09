@@ -4,7 +4,7 @@ import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CustomHook from "../CustomHook/CustomHook";
-import pizzaAppImg from "../../assets/pazzaAppImg.bmp";
+import pizzaAppImg from "../../assets/pizzaAppImg.bmp";
 import reactAppImg from "../../assets/reactAppImg.bmp";
 import movieAppImg from "../../assets/movieAppImg.bmp";
 
