@@ -1,13 +1,28 @@
 import React, { useState } from "react";
-import "./style.css";
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { changeTabActive } from "../../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "./style.css";
 
 const NavBar = ({ activeTab }) => {
-  const [linkNav] = useState(["Home", "Experience", "Skills", "Projects", "Contacts"]);
+  const dispatch = useDispatch();
+
+  const [linkNav] = useState([
+    "Home",
+    "Experience",
+    "Skills",
+    "Projects",
+    "Contacts",
+  ]);
   const [statusNav, changeStatusNav] = useState(null);
   const toggleNav = () => {
     changeStatusNav(statusNav === null ? "active" : null);
+  };
+  const changeTab = (value) => {
+    dispatch(changeTabActive(value));
+    toggleNav();
   };
 
   return (
@@ -15,7 +30,11 @@ const NavBar = ({ activeTab }) => {
       <div className="logo">My Portfolio</div>
       <nav className={statusNav}>
         {linkNav.map((value) => (
-          <span key={value} className={activeTab === value ? "active" : ""}>
+          <span
+            key={value}
+            className={activeTab === value ? "active" : ""}
+            onClick={() => changeTab(value)}
+          >
             {value}
           </span>
         ))}
@@ -26,5 +45,8 @@ const NavBar = ({ activeTab }) => {
     </header>
   );
 };
+const mapStateToProps = (state) => ({
+  activeTab: state.activeTab,
+});
 
-export default NavBar;
+export default connect(mapStateToProps, { changeTabActive })(NavBar);
