@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import './style.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
@@ -65,19 +67,19 @@ const Contact = () => {
               </a>
             </p>
             <p>
-              <a >
-                <strong>GitHub</strong>
+              <a href="https://github.com/Baisalov24" target="_blank">
+              <FontAwesomeIcon icon={faGithub}/>  <strong>Baisalov24</strong>
               </a>
             </p>
             <p>
-              <a >
-                <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/temirlan-baisalov-4564992b4/"  target="_blank">
+              <FontAwesomeIcon icon={faLinkedin}/> <strong>Temirlan Baisalov</strong>
               </a>
             </p>
           </div>
         </div>
         <div className="form_right">
-          <h1>Contact Us</h1>
+          <h1>Contact Me</h1>
           <form ref={form} onSubmit={handleSubmit} className="message_form">
             <label htmlFor="username" className="label">
               Name
