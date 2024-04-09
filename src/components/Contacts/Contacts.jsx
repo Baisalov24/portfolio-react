@@ -63,8 +63,8 @@ CustomHook(scrollTab, divs);
   return (
     <div className="form_section Contacts"  ref={scrollTab}>
       <div className="form_wrapper">
-        <div className="form_left"  ref={(el) => el && divs.current.push(el)}>
-          <div>
+        <div className="form_left" ref={(el) => el && divs.current.push(el)}>
+         
             <p>
               <a href="mailto:t.baisalov44@gmail.com" className="gmail-button">
                 <strong>Email: t.baisalov44@gmail.com</strong>
@@ -80,7 +80,7 @@ CustomHook(scrollTab, divs);
               <FontAwesomeIcon icon={faLinkedin}/> <strong>Temirlan Baisalov</strong>
               </a>
             </p>
-          </div>
+         
         </div>
         <div className="form_right"  ref={(el) => el && divs.current.push(el)}>
           <h1>Contact Me</h1>
