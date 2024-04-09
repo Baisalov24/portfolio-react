@@ -1,15 +1,19 @@
-import React, { useState } from "react";
-import "./style.css";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import typescriptImg from '../../assets/typescript.png'
 import {
   faReact,
   faHtml5,
   faCss3,
   faJs,
 } from "@fortawesome/free-brands-svg-icons";
+import CustomHook from "../CustomHook/CustomHook";
+import "./style.css";
 
 function Skills() {
+  const divs = useRef([]);
+  const scrollTab = useRef();
+  CustomHook(scrollTab, divs);
+
   const [listSkills] = useState([
     {
       name: "HTML",
@@ -43,14 +47,26 @@ function Skills() {
     },
   ]);
   return (
-    <section className="skills">
-      <div className="title">Toolkit Arsenal</div>
-      <div className="des">
-      In this section, I delve into the comprehensive suite of technologies and tools that have been instrumental in my journey as a front-end developer. From the foundational trifecta of HTML, CSS, and JavaScript, which forms the backbone of the web, to advanced frameworks like React for component-driven development and Redux for state management, each tool has been carefully selected and mastered to enhance functionality, aesthetics and user experience.
+    <section ref={scrollTab} className="skills">
+      <div className="title" ref={(el) => el && divs.current.push(el)}>
+        Toolkit Arsenal
+      </div>
+      <div className="des" ref={(el) => el && divs.current.push(el)}>
+        In this section, I delve into the comprehensive suite of technologies
+        and tools that have been instrumental in my journey as a front-end
+        developer. From the foundational trifecta of HTML, CSS, and JavaScript,
+        which forms the backbone of the web, to advanced frameworks like React
+        for component-driven development and Redux for state management, each
+        tool has been carefully selected and mastered to enhance functionality,
+        aesthetics and user experience.
       </div>
       <div className="list">
         {listSkills.map((value, key) => (
-          <div className={"item"} key={key}>
+          <div
+            className={"item"}
+            key={key}
+            ref={(el) => el && divs.current.push(el)}
+          >
             <FontAwesomeIcon icon={value.icon} />
             <h3>{value.name}</h3>
             <div className="des">{value.des}</div>

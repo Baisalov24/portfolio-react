@@ -31,3 +31,15 @@ main {
   max-width: 100%;
   margin: auto;
 }
+
+.animation{
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.animation.active{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
