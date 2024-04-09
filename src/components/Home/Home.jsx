@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
+import CustomHook from "../CustomHook/CustomHook";
 import "./style.css";
-import avatar from "../../assets/avatar.png"
+import avatar from "../../assets/avatar.png";
 
 function Home() {
+  const scrollTab = useRef();
+  CustomHook(scrollTab);
+
   return (
-    <section className="home">
+    <section ref={scrollTab} className="home">
       <div className="content">
         <div className="name">
           MY NAME IS <span>Temirlan</span>
         </div>
         <div className="des">
-          I'm front-end developer. As a dedicated front-end developer with over two years of experience, I specialize in turning complex designs into functional and aesthetically pleasing web applications.
+          I'm front-end developer. As a dedicated front-end developer with over
+          two years of experience, I specialize in turning complex designs into
+          functional and aesthetically pleasing web applications.
         </div>
 
         <a
