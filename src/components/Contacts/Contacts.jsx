@@ -1,39 +1,135 @@
-import React, { useState} from 'react' 
+import React, { useRef } from "react";
 import './style.css'
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
-function Contacts() {
-const [listContacts] = useState([
-  {
-    title: 'Phone Number',
-    value: '+84123XXX'
-  },{
-    title: 'Email',
-    value: 'aisojf.dev@gmail.com'
-  },{
-    title: 'Instagram',
-    value: '@kasfk.web'
-  }
-])
+const initialFormData = {
+  name: "",
+  email: "",
+  message: "",
+};
+const Contact = () => {
+  const form = useRef();
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [showMessage, setShowMessage] = useState(false);
+
+  const isFormValid = formData.name && formData.email && formData.message;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid) {
+      return;
+    }
+
+    setFormData(initialFormData);
+
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 5000);
+
+    emailjs
+      .sendForm(
+        "service_4cpcoec",
+        "template_482640h",
+        form.current,
+        "twiSklDAsh06rUA4n"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
   return (
-    <section className='contacts' >
-       <div className="title" >
-        This is my Contacts
-       </div>
-       <div className="des" >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis quae veniam amet nesciunt voluptatibus quis consectetur consequatur quisquam harum.
-       </div>
-       <div className="list"  >
-        {
-          listContacts.map((value, key) => (
-            <div className='item' key={key}>
-              <h3>{value.title}</h3>
-              <div>{value.value}</div>
+    <div className="form_section" id="contactUs">
+      <div className="form_wrapper">
+        <div className="form_left">
+          <div>
+            <p>
+              <a href="mailto:t.baisalov44@gmail.com" className="gmail-button">
+                <strong>Email: t.baisalov44@gmail.com</strong>
+              </a>
+            </p>
+            <p>
+              <a >
+                <strong>GitHub</strong>
+              </a>
+            </p>
+            <p>
+              <a >
+                <strong>LinkedIn</strong>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div className="form_right">
+          <h1>Contact Us</h1>
+          <form ref={form} onSubmit={handleSubmit} className="message_form">
+            <label htmlFor="username" className="label">
+              Name
+            </label>
+            <input
+              id="username"
+              className="input"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="useremail" className="label">
+              Email
+            </label>
+            <input
+              id="useremail"
+              className="input"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="usermessage"  className="label">Text</label>
+
+            <textarea
+            id="usermessage"
+              className="input"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+            <button
+              className="contactUs_btn"
+              type="submit"
+              disabled={!isFormValid}
+            >
+              Submit
+            </button>
+          </form>
+          {showMessage && (
+            <div>
+              <h3 className="formAlert">Form submitted successfully!</h3>
             </div>
-          ))
-        }
-       </div>
-    </section>
-  )
-}
-export default Contacts
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
