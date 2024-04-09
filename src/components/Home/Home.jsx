@@ -14,7 +14,7 @@ function Home() {
           MY NAME IS <span>Temirlan</span>
         </div>
         <div className="des">
-          I'm front-end developer. As a dedicated front-end developer with over
+          I'm front-end developer. <br />As a dedicated front-end developer with over
           two years of experience, I specialize in turning complex designs into
           functional and aesthetically pleasing web applications.
         </div>

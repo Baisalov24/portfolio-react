@@ -27,7 +27,7 @@ const NavBar = ({ activeTab }) => {
 
   return (
     <header>
-      <div className="logo">My Portfolio</div>
+      <div className="logo">Portfolio</div>
       <nav className={statusNav}>
         {linkNav.map((value) => (
           <span

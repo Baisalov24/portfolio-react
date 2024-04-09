@@ -21,8 +21,10 @@ header {
       display: flex;
       align-items: center;
       gap: 30px;
+      font-size: 18px;
       & span {
         cursor: pointer;
+        font-size: 18px;
       }
       & .active {
         color: #e945e3;
