@@ -31,6 +31,7 @@ section.projects{
                 
                 & img{
                     height: 400px;
+                    width: 100%;
                     border-radius: 10px;
                     box-shadow: 0 20px 40px #010824;
                 }
@@ -71,4 +72,10 @@ section.projects{
             }
         }
     }
+  }
+
+  a {
+    color: white; 
+    text-decoration: none;
+    cursor: pointer; 
   }
