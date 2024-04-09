@@ -25,7 +25,7 @@ function Home() {
           rel="noopener noreferrer"
           className="animation active "
         >
-          My Github account
+          Github account
         </a>
       </div>
       <div className="avatar">
