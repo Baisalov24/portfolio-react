@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./style.css";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import pizzaAppImg from'../../assets/pazzaAppImg.bmp'
-import reactAppImg from'../../assets/reactAppImg.bmp'
-import movieAppImg from'../../assets/movieAppImg.bmp'
+import CustomHook from "../CustomHook/CustomHook";
+import pizzaAppImg from "../../assets/pazzaAppImg.bmp";
+import reactAppImg from "../../assets/reactAppImg.bmp";
+import movieAppImg from "../../assets/movieAppImg.bmp";
 
 function Projects() {
   const [listProjects] = useState([
@@ -40,10 +41,15 @@ function Projects() {
       images: movieAppImg,
     },
   ]);
+
+  const divs = useRef([]);
+  const scrollTab = useRef();
+  CustomHook(scrollTab, divs);
+
   return (
-    <section className="projects">
-      <div className="title">Pet Projects</div>
-      <div className="des">
+    <section ref={scrollTab} className="projects">
+      <div className="title" ref={(el) => el && divs.current.push(el)}>Pet Projects</div>
+      <div className="des" ref={(el) => el && divs.current.push(el)}>
         In this projects I showcase a diverse array of personal initiatives
         where I've applied my skills in HTML5, CSS, JavaScript, React, and
         Redux, among others. Each project is a reflection of my commitment to
@@ -52,7 +58,7 @@ function Projects() {
       </div>
       <div className="list">
         {listProjects.map((value, key) => (
-          <div className="item" key={key}>
+          <div className="item" key={key} ref={(el) => el && divs.current.push(el)}>
             <div className="images">
               <img src={value.images} alt="" />
             </div>
