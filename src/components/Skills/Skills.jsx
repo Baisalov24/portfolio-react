@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import typescriptImg from '../../assets/typescript.png'
 import {
   faReact,
   faHtml5,
@@ -12,40 +13,40 @@ function Skills() {
   const [listSkills] = useState([
     {
       name: "HTML",
-      des: "Eu voluptate sit do labore consectetur in ad esse qui laborum ad eiusmod. Esse ea velit culpa exercitation anim enim reprehenderit. Fugiat nostrud non dolore aliquip quis in ea amet duis.",
+      des: "I leveraged HTML to structure web content, ensuring semantic markup for accessibility and SEO optimization. My focus on HTML5 allowed me to utilize the latest multimedia and interactive elements, making web pages more engaging and functional.",
       icon: faHtml5,
     },
     {
       name: "CSS",
-      des: "Ad ad in cillum ut labore irure aliqua. Ex sit dolore ipsum id duis nostrud veniam. Nisi duis ut veniam ut eiusmod occaecat ullamco ullamco. Consequat eu sunt ut elit dolor sint magna magna velit ex. Excepteur occaecat reprehenderit tempor veniam.",
+      des: "With CSS, I styled web interfaces to match design mockups precisely, employing CSS3 features for animations, transitions, and responsive layouts. I utilized preprocessors like SASS for more efficient styling, and frameworks such as Bootstrap to speed up the development process.",
       icon: faCss3,
     },
     {
       name: "Javascript",
-      des: "Sunt nostrud nulla qui cillum mollit aute anim anim aliqua aute magna tempor. Do culpa culpa excepteur officia ut eu deserunt proident sint non ut do magna minim. Sunt et excepteur tempor culpa irure non exercitation. Amet nostrud ex aute incididunt incididunt ipsum.",
+      des: "I utilized JavaScript to add interactivity to web pages, from simple animations to complex application logic. My work included ES6+ features for cleaner code, AJAX for dynamic content loading, and JSON for data handling, significantly enhancing user experience.",
       icon: faJs,
     },
     {
       name: "ReactJs",
-      des: "Voluptate qui adipisicing dolore pariatur laboris deserunt consectetur reprehenderit. Esse dolor elit ullamco duis quis aliquip fugiat ipsum nisi est et. Nisi ut deserunt excepteur irure aliquip proident ",
+      des: "In React projects, I built reusable components to streamline development and maintain consistency across applications. I leveraged React's state management and lifecycle methods to handle dynamic data effectively, creating fast, responsive user interfaces.",
       icon: faReact,
     },
     {
       name: "Redux",
-      des: "Laborum commodo reprehenderit anim sunt est. Aliquip ipsum nisi incididunt enim ex id et sit sint magna. Deserunt minim ullamco aute veniam. Do irure nulla ut quis.",
+      des: "I integrated Redux into React applications for predictable state management, ensuring a unidirectional data flow and centralized state. This made debugging and testing easier, and facilitated the development of features requiring global state, like user authentication and form handling.",
+      // icon: faRedux,
     },
     {
       name: "TypeScript",
-      des: "Ullamco incididunt adipisicing laboris ullamco ipsum quis nulla non. Non et irure amet in sint duis Lorem est eiusmod nisi. Aute dolor eiusmod esse et cupidatat ex minim do reprehenderit ut aute. In commodo do consectetur qui occaecat cupidatat sint ullamco dolor tempor ullamco elit.",
+      des: "I adopted TypeScript to enhance JavaScript code reliability and maintainability, leveraging its static typing to catch errors early and ensure type safety across the application. TypeScript's features enabled more robust coding practices and improved collaboration with back-end teams.",
+      // icon: typescriptImg,
     },
   ]);
   return (
     <section className="skills">
-      <div className="title">This is my Skills</div>
+      <div className="title">Toolkit Arsenal</div>
       <div className="des">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-        perspiciatis quae veniam amet nesciunt voluptatibus quis consectetur
-        consequatur quisquam harum.
+      In this section, I delve into the comprehensive suite of technologies and tools that have been instrumental in my journey as a front-end developer. From the foundational trifecta of HTML, CSS, and JavaScript, which forms the backbone of the web, to advanced frameworks like React for component-driven development and Redux for state management, each tool has been carefully selected and mastered to enhance functionality, aesthetics and user experience.
       </div>
       <div className="list">
         {listSkills.map((value, key) => (
