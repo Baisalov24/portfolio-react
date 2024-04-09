@@ -1,5 +1,5 @@
 const initialState = {
-  activeTab: 'Home'
+  activeTab: "Home"
   };
   
   const rootReducer = (state = initialState, action) => {

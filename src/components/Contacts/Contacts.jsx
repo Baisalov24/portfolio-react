@@ -61,7 +61,7 @@ const scrollTab = useRef();
 CustomHook(scrollTab, divs);
 
   return (
-    <div className="form_section" id="contactUs" ref={scrollTab}>
+    <div className="form_section Contacts"  ref={scrollTab}>
       <div className="form_wrapper">
         <div className="form_left"  ref={(el) => el && divs.current.push(el)}>
           <div>

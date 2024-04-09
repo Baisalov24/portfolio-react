@@ -47,7 +47,7 @@ function Skills() {
     },
   ]);
   return (
-    <section ref={scrollTab} className="skills">
+    <section ref={scrollTab} className="Skills">
       <div className="title" ref={(el) => el && divs.current.push(el)}>
         Toolkit Arsenal
       </div>

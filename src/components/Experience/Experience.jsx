@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./style.css";
 import experienceData from "./experienceData";
 import { ReactComponent as WorkIcon } from "../../assets/work.svg";
+import CustomHook from '../CustomHook/CustomHook';
 
 import {
   VerticalTimeline,
@@ -11,10 +12,14 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 function Experience() {
+  const divs = useRef([]);
+  const scrollTab = useRef();
+  CustomHook(scrollTab, divs);
+
   let workIconStyles = { background: "#eee5" };
 
   return (
-    <div>
+    <div className="Experience" ref={scrollTab}>
       <h1 className="title">My Experience</h1>
       <VerticalTimeline>
         {experienceData.map((element) => {

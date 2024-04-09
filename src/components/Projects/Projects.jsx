@@ -47,7 +47,7 @@ function Projects() {
   CustomHook(scrollTab, divs);
 
   return (
-    <section ref={scrollTab} className="projects">
+    <section ref={scrollTab} className="Projects">
       <div className="title" ref={(el) => el && divs.current.push(el)}>Pet Projects</div>
       <div className="des" ref={(el) => el && divs.current.push(el)}>
         In this projects I showcase a diverse array of personal initiatives
