@@ -7,7 +7,7 @@ section {
   top: 0;
 }
 
-section.home {
+section.Home {
   padding-top: 150px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

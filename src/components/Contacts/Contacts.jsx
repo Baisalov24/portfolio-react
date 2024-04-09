@@ -66,17 +66,17 @@ CustomHook(scrollTab, divs);
         <div className="form_left" ref={(el) => el && divs.current.push(el)}>
          
             <p>
-              <a href="mailto:t.baisalov44@gmail.com" className="gmail-button">
+              <a href="mailto:t.baisalov44@gmail.com" className="gmail-button" rel="noreferrer">
                 <strong>Email: t.baisalov44@gmail.com</strong>
               </a>
             </p>
             <p>
-              <a href="https://github.com/Baisalov24" target="_blank">
+              <a href="https://github.com/Baisalov24" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faGithub}/>  <strong>Baisalov24</strong>
               </a>
             </p>
             <p>
-              <a href="https://www.linkedin.com/in/temirlan-baisalov-4564992b4/"  target="_blank">
+              <a href="https://www.linkedin.com/in/temirlan-baisalov-4564992b4/"  target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faLinkedin}/> <strong>Temirlan Baisalov</strong>
               </a>
             </p>

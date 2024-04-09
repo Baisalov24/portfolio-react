@@ -16,20 +16,18 @@ function Experience() {
   const scrollTab = useRef();
   CustomHook(scrollTab, divs);
 
-  let workIconStyles = { background: "#eee5" };
-
   return (
     <div className="Experience" ref={scrollTab}>
       <h1 className="title">My Experience</h1>
       <VerticalTimeline>
-        {experienceData.map((element) => {
+        {experienceData.map((element, index) => {
           return (
             <VerticalTimelineElement
               contentStyle={{
                 background: "rgba(0, 0, 0, 0.30)",
                 color: "#fff",
               }}
-              key={element.key}
+              key={index}
               date={element.date}
               dateClassName="date"
               iconStyle={{ background: "#fff", color: "#fff" }}

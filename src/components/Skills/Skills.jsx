@@ -38,12 +38,10 @@ function Skills() {
     {
       name: "Redux",
       des: "I integrated Redux into React applications for predictable state management, ensuring a unidirectional data flow and centralized state. This made debugging and testing easier, and facilitated the development of features requiring global state, like user authentication and form handling.",
-      // icon: faRedux,
     },
     {
       name: "TypeScript",
       des: "I adopted TypeScript to enhance JavaScript code reliability and maintainability, leveraging its static typing to catch errors early and ensure type safety across the application. TypeScript's features enabled more robust coding practices and improved collaboration with back-end teams.",
-      // icon: typescriptImg,
     },
   ]);
   return (

@@ -67,12 +67,12 @@ function Projects() {
               <div className="des">{value.des}</div>
               <div className="mission">
                 <div>
-                  <a href={value.linkToCode} target="_blank">
+                  <a href={value.linkToCode} target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub} />
                   </a>
                 </div>
                 <div>
-                  <a href={value.linkToCode} target="_blank">
+                  <a href={value.linkToCode} target="_blank" rel="noreferrer">
                     <h4>Link to source code</h4>
                   </a>
                   <div className="des">{value.mission}</div>
@@ -80,12 +80,12 @@ function Projects() {
               </div>
               <div className="mission">
                 <div>
-                  <a href={value.linkToApp} target="_blank">
+                  <a href={value.linkToApp} target="_blank" rel="noreferrer">
                     <FontAwesomeIcon icon={faEarthAmericas} />{" "}
                   </a>
                 </div>
                 <div>
-                  <a href={value.linkToApp} target="_blank">
+                  <a href={value.linkToApp} target="_blank" rel="noreferrer">
                     <h4>Link to the application</h4>
                   </a>
                   <div className="des">{value.language}</div>

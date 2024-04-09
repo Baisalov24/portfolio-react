@@ -8,7 +8,7 @@ function Home() {
   CustomHook(scrollTab);
 
   return (
-    <section ref={scrollTab} className="home">
+    <section ref={scrollTab} className="Home">
       <div className="content">
         <div className="name">
           MY NAME IS <span>Temirlan</span>
