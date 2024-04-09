@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, {useState, useRef } from "react";
 import './style.css'
+import CustomHook from '../CustomHook/CustomHook';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
 
 const initialFormData = {
   name: "",
@@ -56,10 +56,14 @@ const Contact = () => {
     }));
   };
 
+  const divs = useRef([]);
+const scrollTab = useRef();
+CustomHook(scrollTab, divs);
+
   return (
-    <div className="form_section" id="contactUs">
+    <div className="form_section" id="contactUs" ref={scrollTab}>
       <div className="form_wrapper">
-        <div className="form_left">
+        <div className="form_left"  ref={(el) => el && divs.current.push(el)}>
           <div>
             <p>
               <a href="mailto:t.baisalov44@gmail.com" className="gmail-button">
@@ -78,7 +82,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div className="form_right">
+        <div className="form_right"  ref={(el) => el && divs.current.push(el)}>
           <h1>Contact Me</h1>
           <form ref={form} onSubmit={handleSubmit} className="message_form">
             <label htmlFor="username" className="label">
