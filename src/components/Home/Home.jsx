@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import CustomHook from "../CustomHook/CustomHook";
 import "./style.css";
-import avatar from "../../assets/avatar.png";
+import avatar from "../../assets/img/avatar.png";
 
 function Home() {
   const scrollTab = useRef();
@@ -14,9 +14,7 @@ function Home() {
           MY NAME IS <span>Temirlan</span>
         </div>
         <div className="des">
-          I'm front-end developer. <br />As a dedicated front-end developer with over
-          two years of experience, I specialize in turning complex designs into
-          functional and aesthetically pleasing web applications.
+        Results-driven Frontend Developer <br /> with 3+ years of experience in modern web technologies and a passion for creating seamless, responsive, and high-performance web applications. Experienced in developing scalable solutions using React, JavaScript, and TypeScript, with a deep understanding of UI/UX principles. Adept at working in Agile teams and collaborating with backend developers, designers, and stakeholders to deliver high-quality products.
         </div>
 
         <a

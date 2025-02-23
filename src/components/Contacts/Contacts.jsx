@@ -66,8 +66,8 @@ CustomHook(scrollTab, divs);
         <div className="form_left" ref={(el) => el && divs.current.push(el)}>
          
             <p>
-              <a href="mailto:t.baisalov44@gmail.com" className="gmail-button" rel="noreferrer">
-                <strong>Email: t.baisalov44@gmail.com</strong>
+              <a href="mailto:temirlanbaisalov35@gmail.com" className="gmail-button" rel="noreferrer">
+                <strong>Email: temirlanbaisalov35@gmail.com</strong>
               </a>
             </p>
             <p>

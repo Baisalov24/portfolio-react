@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./style.css";
 import experienceData from "./experienceData";
-import { ReactComponent as WorkIcon } from "../../assets/work.svg";
+import { ReactComponent as WorkIcon } from "../../assets/tools/work.svg";
 import CustomHook from "../CustomHook/CustomHook";
 
 import {
@@ -10,8 +10,6 @@ import {
 } from "react-vertical-timeline-component";
 
 import "react-vertical-timeline-component/style.min.css";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Experience() {
   const divs = useRef([]);
@@ -38,9 +36,6 @@ function Experience() {
               <h3 className="vertical-timeline-element-title">
                 {element.title}
               </h3>
-              <h5 className="vertical-timeline-element-subtitle">
-                <FontAwesomeIcon icon={faLocationDot} /> {element.location}
-              </h5>
               <p id="description">{element.description}</p>
               <p>{element.company} </p>
             </VerticalTimelineElement>
