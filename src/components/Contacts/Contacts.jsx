@@ -61,9 +61,9 @@ const scrollTab = useRef();
 CustomHook(scrollTab, divs);
 
   return (
-    <div className="form_section Contacts"  ref={scrollTab}>
-      <div className="form_wrapper">
-        <div className="form_left" ref={(el) => el && divs.current.push(el)}>
+    <div className="contact_form_section" id="Contacts"  ref={scrollTab}>
+      <div className="contact_form_wrapper">
+        <div className="contact_form_left" ref={(el) => el && divs.current.push(el)}>
          
             <p>
               <a href="mailto:temirlanbaisalov35@gmail.com" className="gmail-button" rel="noreferrer">
@@ -82,38 +82,38 @@ CustomHook(scrollTab, divs);
             </p>
          
         </div>
-        <div className="form_right"  ref={(el) => el && divs.current.push(el)}>
+        <div className="contact_form_right"  ref={(el) => el && divs.current.push(el)}>
           <h1>Contact Me</h1>
-          <form ref={form} onSubmit={handleSubmit} className="message_form">
-            <label htmlFor="username" className="label">
+          <form ref={form} onSubmit={handleSubmit} className="contact_form">
+            <label htmlFor="username" className="contact_label">
               Name
             </label>
             <input
               id="username"
-              className="input"
+              className="contact_input"
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
             />
-            <label htmlFor="useremail" className="label">
+            <label htmlFor="useremail" className="contact_label">
               Email
             </label>
             <input
               id="useremail"
-              className="input"
+              className="contact_input"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
             />
-            <label htmlFor="usermessage"  className="label">Text</label>
+            <label htmlFor="usermessage"  className="contact_label">Text</label>
 
             <textarea
             id="usermessage"
-              className="input"
+              className="contact_textarea"
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -129,7 +129,7 @@ CustomHook(scrollTab, divs);
           </form>
           {showMessage && (
             <div>
-              <h3 className="formAlert">Form submitted successfully!</h3>
+              <h3 className="contact_formAlert">Form submitted successfully!</h3>
             </div>
           )}
         </div>

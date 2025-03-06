@@ -1,49 +1,84 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { changeTabActive } from "../../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
-const NavBar = ({ activeTab }) => {
+const NavBar = () => {
   const dispatch = useDispatch();
+  const activeTab = useSelector((state) => state.activeTab);
 
-  const [linkNav] = useState([
-    "Home",
-    "Experience",
-    'Skills',
-    "Projects",
-    "Contacts",
-  ]);
-  const [statusNav, changeStatusNav] = useState(null);
+  const sections = useMemo(
+    () => ["Home", "Experience", "Skills", "Projects", "Contacts"],
+    []
+  );
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const toggleNav = () => {
-    changeStatusNav(statusNav === null ? "active" : null);
+    setMenuOpen((prev) => !prev);
   };
+
   const changeTab = (value) => {
+    const section = document.getElementById(value);
+    if (section) {
+      const yOffset = -80;
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+
     dispatch(changeTabActive(value));
-    toggleNav();
+    setMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = 150;
+      let currentSection = null;
+
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const { top, bottom } = section.getBoundingClientRect();
+          if (top <= threshold && bottom > threshold) {
+            currentSection = sectionId;
+            break;
+          }
+        }
+      }
+
+      if (currentSection && currentSection !== activeTab) {
+        dispatch(changeTabActive(currentSection));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [dispatch, sections, activeTab]);
 
   return (
-    <header>
-      <div className="logo">Frontend Developer</div>
-      <nav className={statusNav}>
-        {linkNav.map((value) => (
-          <span
-            key={value}
-            className={activeTab === value ? "active" : ""}
-            onClick={() => changeTab(value)}>{value}</span>
-        ))}
-      </nav>
-      <div className="icon-bar" onClick={toggleNav}>
-        <FontAwesomeIcon icon={faBars} />
+    <header className="navbar">
+      <div className="navbar_wrapper">
+        <div className="logo">My Portfolio</div>
+        <nav className={menuOpen ? "active" : ""}>
+          {sections.map((value) => (
+            <span
+              key={value}
+              className={activeTab === value ? "active" : ""}
+              onClick={() => changeTab(value)}
+            >
+              {value}
+            </span>
+          ))}
+        </nav>
+        <div className="icon-bar" onClick={toggleNav}>
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </div>
       </div>
     </header>
   );
 };
-const mapStateToProps = (state) => ({
-  activeTab: state.activeTab,
-});
 
-export default connect(mapStateToProps, { changeTabActive })(NavBar);
+export default NavBar;

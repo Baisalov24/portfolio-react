@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;500;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;500;700&display=swap");
-
 body {
   margin: 0;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   background-color: #010824;
   color: #eee;
   font-size: 15px;
@@ -26,6 +24,10 @@ body {
     filter: blur(250px);
   }
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 main {
   width: 1300px;
   max-width: 100%;
@@ -38,6 +40,7 @@ main {
   opacity: 0;
   transition: 0.5s;
 }
+
 .animation.active {
   opacity: 1;
   filter: blur(0);
@@ -58,6 +61,7 @@ main {
     }
   }
 }
+
 @media screen and (max-width: 767px) {
   section {
     padding: 20px;
@@ -74,6 +78,7 @@ main {
         grid-row-start: 1;
       }
     }
+
     &.projects {
       & .list {
         & .item {
@@ -85,6 +90,7 @@ main {
             }
           }
         }
+
         & .item:nth-child(2n) {
           & .content,
           .images {
@@ -96,6 +102,7 @@ main {
       }
     }
   }
+
   header {
     & nav {
       width: 80%;
@@ -113,9 +120,11 @@ main {
       left: -100%;
       transition: 0.5s;
     }
+
     & .icon-bar {
       display: block;
     }
+
     & nav.active {
       left: 0;
     }

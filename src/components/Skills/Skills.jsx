@@ -5,6 +5,7 @@ import {
   faHtml5,
   faCss3,
   faJs,
+  
 } from "@fortawesome/free-brands-svg-icons";
 import CustomHook from "../CustomHook/CustomHook";
 import "./style.css";
@@ -45,11 +46,11 @@ function Skills() {
     },
   ]);
   return (
-    <section ref={scrollTab} className="Skills">
-      <div className="title" ref={(el) => el && divs.current.push(el)}>
+    <section ref={scrollTab} className="skills_section" id="Skills">
+      <div className="skills_title" ref={(el) => el && divs.current.push(el)}>
         Toolkit Arsenal
       </div>
-      <div className="des" ref={(el) => el && divs.current.push(el)}>
+      <div className="skills_description" ref={(el) => el && divs.current.push(el)}>
         In this section, I delve into the comprehensive suite of technologies
         and tools that have been instrumental in my journey as a front-end
         developer. From the foundational trifecta of HTML, CSS, and JavaScript,
@@ -58,16 +59,16 @@ function Skills() {
         tool has been carefully selected and mastered to enhance functionality,
         aesthetics and user experience.
       </div>
-      <div className="list">
+      <div className="skills_list">
         {listSkills.map((value, key) => (
           <div
-            className={"item"}
+            className={"skills_item"}
             key={key}
             ref={(el) => el && divs.current.push(el)}
           >
             <FontAwesomeIcon icon={value.icon} />
             <h3>{value.name}</h3>
-            <div className="des">{value.des}</div>
+            <div className="skills_item_description">{value.des}</div>
           </div>
         ))}
       </div>

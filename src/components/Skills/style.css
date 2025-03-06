@@ -1,53 +1,105 @@
-section.Skills{
-    & .title{
-        text-align: center;
-        font-size: 5vw;
-        font-family: 'MuseoModerno', system-ui;
+section.skills_section {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .skills_title {
+    font-size: 5vw;
+    font-family: "MuseoModerno", system-ui;
+  }
+  
+  .skills_description {
+    color: #eee5;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .skills_list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 3vw;
+    position: relative;
+    padding: 20px;
+  }
+  
+  .skills_list::before {
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 60%;
+    background-image: linear-gradient(-45deg, red, blue);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 20px;
+    background-size: 200% auto;
+    z-index: -1;
+  }
+  
+  .skills_item {
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(1, 8, 36, 0.6);
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .skills_item:hover {
+    transform: scale(1.05);
+  }
+  
+  .skills_item svg {
+    font-size: 30px;
+    background-color: rgba(238, 238, 238, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .skills_item_description {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 850px) {
+    .skills_title {
+      font-size: 7vw;
     }
-    & .des{
-        color: #eee5;
-        text-align: center;
-        max-width: 500px;
-        margin: auto;
+  
+    .skills_list {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-    & .list{
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        justify-content: space-between;
-        gap: 3vw;
-        position: relative;
-        &::before{
-            position: absolute;
-            content: '';
-            width: 70%;
-            height: 70%;
-            background-image: linear-gradient(
-                -45deg, red, blue
-            );
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            border-radius: 20px;
-            background-size: 200% auto;
-        }
-        & .item{
-            backdrop-filter: blur(50px);
-            padding: 20px;
-            border-radius: 20px;
-            background-color: #01082488;
-            & svg{
-                font-size: 30px;
-                background-color: #eee2;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            & .des{
-                text-align: left;
-                width: 100%;
-                font-size: small;
-            }
-        }
+  
+    .skills_list::before {
+      width: 80%;
+      height: 80%;
     }
   }
+  
+  @media (max-width: 600px) {
+    .skills_title {
+      font-size: 8vw;
+    }
+  
+    .skills_description {
+      font-size: 14px;
+    }
+  
+    .skills_list {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .skills_list::before {
+      display: none;
+    }
+  
+    .skills_item {
+      padding: 15px;
+    }
+  }
+  

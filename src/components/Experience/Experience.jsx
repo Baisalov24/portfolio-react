@@ -17,7 +17,7 @@ function Experience() {
   CustomHook(scrollTab, divs);
 
   return (
-    <div className="Experience" ref={scrollTab}>
+    <div id="Experience" ref={scrollTab}>
       <h1 className="title">My Experience</h1>
       <VerticalTimeline>
         {experienceData.map((element, index) => {
