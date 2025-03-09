@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTabActive } from "../../redux/actions";
+import { changeTabActive } from "../../redux/slices/tabSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const activeTab = useSelector((state) => state.activeTab);
+  const activeTab = useSelector((state) => state.activeTab.activeTab);
 
   const sections = useMemo(
     () => ["Home", "Experience", "Skills", "Projects", "Contacts"],
