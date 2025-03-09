@@ -1,20 +1,21 @@
 import React, { useRef } from "react";
 import "./style.css";
-import experienceData from "./experienceData";
 import { ReactComponent as WorkIcon } from "../../assets/tools/work.svg";
 import CustomHook from "../CustomHook/CustomHook";
-
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
 import "react-vertical-timeline-component/style.min.css";
+import { useSelector } from "react-redux";
 
-function Experience() {
+const Experience = () => {
   const divs = useRef([]);
   const scrollTab = useRef();
   CustomHook(scrollTab, divs);
+
+  const experienceData = useSelector((data) => data.experienceData.data);
 
   return (
     <div id="Experience" ref={scrollTab}>
@@ -44,6 +45,6 @@ function Experience() {
       </VerticalTimeline>
     </div>
   );
-}
+};
 
 export default Experience;
